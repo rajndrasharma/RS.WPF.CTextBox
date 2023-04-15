@@ -1,8 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
+    <PackageId>RS.WPF.CTextBox</PackageId>
     <TargetFramework>net7.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Version>1.0.0</Version>
+    <PackageTags>WPF Custom Text Box</PackageTags>
+    <Authors>Rajendra Prasad Sharma</Authors>
+    <Description>
+      This library contains three types of inputs, text box, date box and multiline text box alongwith
+      labels and error message attached with them. Input box can be numerial, date, or alphanumerical
+    </Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
-
 </Project>
