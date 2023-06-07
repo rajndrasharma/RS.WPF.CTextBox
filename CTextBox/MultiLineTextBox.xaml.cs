@@ -26,8 +26,8 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
             new PropertyMetadata(0));
 
     public static readonly DependencyProperty TextBoxHeightProperty =
-        DependencyProperty.Register("TextBoxHeight", typeof(object), typeof(MultiLineTextBox),
-            new PropertyMetadata(100));
+        DependencyProperty.Register("TextBoxHeight", typeof(double), typeof(MultiLineTextBox),
+            new PropertyMetadata(100.0));
 
     public static readonly DependencyProperty TextRequiredMessageProperty =
         DependencyProperty.Register("TextRequiredMessage", typeof(string), typeof(MultiLineTextBox),
@@ -58,7 +58,6 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
     
 
     public event PropertyChangedEventHandler PropertyChanged;
-    const int ControlHeight=106;
     public MultiLineTextBox()
     {
         InitializeComponent();
@@ -103,9 +102,9 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
         get { return (int)GetValue(MaxLengthProperty); }
         set { SetValue(MaxLengthProperty, value); }
     }
-    public int TextBoxHeight
+    public double TextBoxHeight
     {
-        get { return (int)GetValue(TextBoxHeightProperty); }
+        get { return Convert.ToDouble(GetValue(TextBoxHeightProperty)); }
         set { SetValue(TextBoxHeightProperty, value); }
     }
     public string TextRequiredMessage
@@ -163,7 +162,7 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
 
         //If Everything is ok then reduce the height and remove error message
         this.LblErrorMessage.Text = "";
-        this.Height = this.TextBoxHeight + 6;
+        this.Height = (double)(this.TextBoxHeight + 6);
         return true;
     }
     private void DisplayErrorMessage(string ErrorMessage)
@@ -171,11 +170,11 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
         if (ErrorMessage.Trim() != "")
         {
             this.LblErrorMessage.Text = ErrorMessage;
-            this.Height = this.TxtTextBox.Height + this.LblErrorMessage.Height;
+            this.Height = (double)(this.TxtTextBox.Height + this.LblErrorMessage.Height);
         }
         else
         {
-            this.Height = this.TextBoxHeight+6;
+            this.Height = (double)(this.TextBoxHeight+6);
         }
     }
     void RaiseTextChangeEvent()
@@ -198,8 +197,8 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
         {
             this.TxtTextBox_GotFocus(TxtTextBox, e);
         }
-        this.TxtTextBox.Height= this.TextBoxHeight;
-        this.Height = this.TextBoxHeight + 6;
+        this.TxtTextBox.Height= (double)this.TextBoxHeight;
+        this.Height = (double)(this.TextBoxHeight + 6);
     }
 
     private void TxtTextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -217,7 +216,7 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
     {
         TxtTextBox.Background = TextBoxBackground;
         if (this.TextRequiredMessage.Trim() != "") { this.Validate(); }
-        else { this.Height = this.TextBoxHeight + 6; }
+        else { this.Height = (double)(this.TextBoxHeight + 6); }
     }
     private void TxtTextBox_TextChanged(object sender, TextChangedEventArgs e)
     {

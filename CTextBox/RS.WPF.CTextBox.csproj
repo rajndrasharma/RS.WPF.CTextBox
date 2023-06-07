@@ -3,7 +3,7 @@
     <PackageId>RS.WPF.CTextBox</PackageId>
     <TargetFramework>net7.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageTags>WPF Custom Text Box</PackageTags>
     <Authors>Rajendra Prasad Sharma</Authors>
     <Description>
