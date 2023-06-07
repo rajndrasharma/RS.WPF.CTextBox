@@ -198,6 +198,8 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
         {
             this.TxtTextBox_GotFocus(TxtTextBox, e);
         }
+        this.TxtTextBox.Height= this.TextBoxHeight;
+        this.Height = this.TextBoxHeight + 6;
     }
 
     private void TxtTextBox_GotFocus(object sender, RoutedEventArgs e)
