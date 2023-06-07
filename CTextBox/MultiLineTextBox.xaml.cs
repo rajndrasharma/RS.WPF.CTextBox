@@ -64,6 +64,7 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
         InitializeComponent();
 
         GrdCText.DataContext = this;
+        this.Height=this.TxtTextBox.Height;
     }
 
     #region CUSTOM PROPERTIES

@@ -37,7 +37,9 @@
         <Label Name="LblTextBox" Width="{Binding Path=LabelWidth}" Grid.Column="0" Grid.Row="0"
                        Content="{Binding Path=Label,Mode=TwoWay}" Focusable="False"/>
 
-        <TextBox Name="TxtTextBox"  Height="{Binding Path=TextBoxHeight,Mode=Default}" Grid.Column="1" Grid.Row="0"
+        <TextBox Name="TxtTextBox"  
+                        MinHeight="100"
+                        Height="{Binding Path=TextBoxHeight,Mode=TwoWay}" Grid.Column="1" Grid.Row="0"
                         Margin="0,3,0,3"
                         VerticalContentAlignment="Top"
                         TextWrapping="Wrap"
