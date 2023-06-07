@@ -12,5 +12,6 @@
     </Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>RS WPF Custom Text Box</Title>
   </PropertyGroup>
 </Project>

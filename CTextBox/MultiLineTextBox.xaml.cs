@@ -64,7 +64,7 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
         InitializeComponent();
 
         GrdCText.DataContext = this;
-        this.Height=this.TxtTextBox.Height;
+        this.Height=this.TxtTextBox.Height+6;
     }
 
     #region CUSTOM PROPERTIES
@@ -163,7 +163,7 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
 
         //If Everything is ok then reduce the height and remove error message
         this.LblErrorMessage.Text = "";
-        this.Height = ControlHeight;
+        this.Height = this.TextBoxHeight + 6;
         return true;
     }
     private void DisplayErrorMessage(string ErrorMessage)
@@ -175,7 +175,7 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
         }
         else
         {
-            this.Height = ControlHeight;
+            this.Height = this.TextBoxHeight+6;
         }
     }
     void RaiseTextChangeEvent()
@@ -215,7 +215,7 @@ public partial class MultiLineTextBox : UserControl, INotifyPropertyChanged
     {
         TxtTextBox.Background = TextBoxBackground;
         if (this.TextRequiredMessage.Trim() != "") { this.Validate(); }
-        else { this.Height = ControlHeight; }
+        else { this.Height = this.TextBoxHeight + 6; }
     }
     private void TxtTextBox_TextChanged(object sender, TextChangedEventArgs e)
     {
